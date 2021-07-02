@@ -1,5 +1,6 @@
 {
   "name": "react-calculator",
+  "homepage": "https://react-calculator-rb.herokuapp.com/",
   "version": "0.1.0",
   "engines": {
     "node": "14.x"
