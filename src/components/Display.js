@@ -6,8 +6,12 @@ const Display = ({ result }) => (
   </div>
 );
 
+Display.defaultProps = {
+  result: '0',
+};
+
 Display.propTypes = {
-  result: PropTypes.string.isRequired,
+  result: PropTypes.string,
 };
 
 export default Display;
