@@ -40,7 +40,7 @@ export default class App extends React.Component {
       }
     } else if (operation === '%') {
       result = total * 100 + operation;
-    } else if (operation === 'X') {
+    } else if (operation !== '%') {
       result = next ? total + operation + next : total + operation;
     } else {
       result = next === null ? operation : next;
@@ -48,11 +48,18 @@ export default class App extends React.Component {
 
     return (
       <>
-        <header className="App-header">
-          Calculator built using React
+        <header>
+          <h1>
+            Calculator built using React
+          </h1>
+          <p>
+            Built by
+          </p>
         </header>
-        <Display result={result} />
-        <ButtonPanel handleClick={this.handleClick} />
+        <div className="calculator">
+          <Display result={result} />
+          <ButtonPanel handleClick={this.handleClick} />
+        </div>
       </>
     );
   }
