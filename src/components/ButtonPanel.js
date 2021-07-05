@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Button from './Button';
 
 const buttonGroups = {
@@ -8,24 +9,58 @@ const buttonGroups = {
   group_5: ['0', '.', '='],
 };
 
-const ButtonPanel = () => (
+const ButtonPanel = (props) => (
   <div>
     <div>
-      {buttonGroups.group_1.map((button) => <Button key={button} buttonName={button} />)}
+      {buttonGroups.group_1.map((button) => (
+        <Button
+          key={button}
+          buttonName={button}
+          handleClick={props.handleClick}
+        />
+      ))}
     </div>
     <div>
-      {buttonGroups.group_2.map((button) => <Button key={button} buttonName={button} />)}
+      {buttonGroups.group_2.map((button) => (
+        <Button
+          key={button}
+          buttonName={button}
+          handleClick={props.handleClick}
+        />
+      ))}
     </div>
     <div>
-      {buttonGroups.group_3.map((button) => <Button key={button} buttonName={button} />)}
+      {buttonGroups.group_3.map((button) => (
+        <Button
+          key={button}
+          buttonName={button}
+          handleClick={props.handleClick}
+        />
+      ))}
     </div>
     <div>
-      {buttonGroups.group_4.map((button) => <Button key={button} buttonName={button} />)}
+      {buttonGroups.group_4.map((button) => (
+        <Button
+          key={button}
+          buttonName={button}
+          handleClick={props.handleClick}
+        />
+      ))}
     </div>
     <div>
-      {buttonGroups.group_5.map((button) => <Button key={button} buttonName={button} />)}
+      {buttonGroups.group_5.map((button) => (
+        <Button
+          key={button}
+          buttonName={button}
+          handleClick={props.handleClick}
+        />
+      ))}
     </div>
   </div>
 );
+
+ButtonPanel.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+};
 
 export default ButtonPanel;
