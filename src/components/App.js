@@ -50,7 +50,7 @@ export default class App extends React.Component {
       <>
         <header>
           <h1>
-            Calculator built using React
+            Calculator App built using React
           </h1>
           <p>
             Built by Ryel Banfield
