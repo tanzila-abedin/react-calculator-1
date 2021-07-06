@@ -13,7 +13,7 @@ Additional description about the project and its features.
 - React
 
 ## Getting Started
-- Download or clone this repo by using `git clone `
+- Download or clone this repo by using `git clone https://github.com/RyelBanfield/react-calculator.git`
 - Enter the project folder and run `npm i`.
 <!-- - To run the tests, run `npm run test`. -->
 - To run the local server, run `npm start`.
