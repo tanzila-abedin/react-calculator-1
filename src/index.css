@@ -6,7 +6,8 @@
 
 body {
   height: 100vh;
-  color: rgb(0, 0, 0);
+  background-color: #dcdde1;
+  color: #192a56;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,27 +22,32 @@ header {
 .calculator {
   height: 75vh;
   width: 75vh;
-  background-color: black;
+  background-color: #192a56;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
 }
 
 .display {
   width: 40vh;
   height: 60px;
-  background-color: white;
-  color: black;
+  background-color: #718093;
+  color: rgb(255, 255, 255);
   font-size: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;
+  border-radius: 5px;
 }
 
 button {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   font-size: 30px;
+  margin: 5px;
+  box-shadow: #000 0 3px 3px 0;
+  border-radius: 5px;
 }
