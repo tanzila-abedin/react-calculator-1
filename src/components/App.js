@@ -1,66 +1,57 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import Calculate from '../logic/calculate';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      total: null,
-      operation: null,
-      next: null,
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
+const App = () => {
+  const [total, setTotal] = useState(null);
+  const [operation, setOperation] = useState(null);
+  const [next, setNext] = useState(null);
+  const [result, setResult] = useState(null);
 
-  handleClick(buttonName) {
-    const { total, operation, next } = this.state;
+  const handleClick = (buttonName) => {
     const data = { total, operation, next };
     const result = Calculate(data, buttonName);
 
-    this.setState({
-      total: result.total,
-      operation: result.operation,
-      next: result.next,
-    });
-  }
+    setTotal(result.total);
+    setOperation(result.operation);
+    setNext(result.next);
+  };
 
-  render() {
-    const { total, next, operation } = this.state;
-    let result;
-
+  useEffect(() => {
     if (operation === null) {
-      result = total;
+      setResult(total);
     } else if (operation === '+/-') {
       if (next === null || next === '0') {
-        result = total;
+        setResult(total);
       } else {
-        result = next;
+        setResult(next);
       }
     } else if (operation === '%') {
-      result = total * 100 + operation;
+      setResult(total * 100 + operation);
     } else if (operation !== '%') {
-      result = next ? total + operation + next : total + operation;
+      setResult(next ? total + operation + next : total + operation);
     } else {
-      result = next === null ? operation : next;
+      setResult(next === null ? operation : next);
     }
+  });
 
-    return (
-      <>
-        <header>
-          <h1>
-            Calculator App built using React
-          </h1>
-          <p>
-            Built by Ryel Banfield
-          </p>
-        </header>
-        <div className="calculator">
-          <Display result={result} />
-          <ButtonPanel handleClick={this.handleClick} />
-        </div>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <header>
+        <h1>
+          Calculator App built using React
+        </h1>
+        <p>
+          Built by Ryel Banfield
+        </p>
+      </header>
+      <div className="calculator">
+        <Display result={result} />
+        <ButtonPanel handleClick={handleClick} />
+      </div>
+    </>
+  );
+};
+
+export default App;
