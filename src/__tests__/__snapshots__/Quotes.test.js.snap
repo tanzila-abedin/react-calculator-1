@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <h2>
+    Everything you can imagine is real. – Pablo Picasso
+  </h2>
+</div>
+`;
