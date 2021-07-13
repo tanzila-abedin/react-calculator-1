@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import Navbar from './Navbar';
 import Calculate from '../logic/calculate';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
@@ -40,10 +39,9 @@ const App = () => {
   return (
     <>
       <header>
-        <Navbar />
-        <h1>
+        <h2>
           Calculator App built using React
-        </h1>
+        </h2>
         <p>
           Built by Ryel Banfield
         </p>

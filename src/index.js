@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import Home from './components/Home';
 import App from './components/App';
 import Quotes from './components/Quotes';
@@ -9,13 +10,14 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <Router>
+      <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/calculator" component={App} />
         <Route exact path="/quotes" component={Quotes} />
       </Switch>
-    </BrowserRouter>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root'),
 );

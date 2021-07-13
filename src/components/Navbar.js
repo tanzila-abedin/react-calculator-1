@@ -27,7 +27,7 @@ const Nav = styled.nav`
     text-decoration: none;
   }
 
-  .current {
+  .activeLink {
     color: #0097e6;
     border-bottom: 1px solid black;
   }
@@ -38,7 +38,7 @@ const Navbar = () => (
     <ul>
       {links.map((link) => (
         <li key={link.name}>
-          <NavLink exact to={link.path} activeClassName="current">{link.name}</NavLink>
+          <NavLink exact to={link.path} activeClassName="activeLink">{link.name}</NavLink>
         </li>
       ))}
     </ul>

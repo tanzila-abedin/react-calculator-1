@@ -8,6 +8,7 @@ body {
   height: 100vh;
   background-color: #dcdde1;
   color: #192a56;
+  font-family: "Source Code Pro", monospace;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,6 +18,28 @@ body {
 header {
   text-align: center;
   padding-bottom: 50px;
+}
+
+h1 {
+  overflow: hidden;
+  border-right: 0.15em solid black;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.1em;
+  animation:
+    typing 3s steps(40, end),
+    blink-cursor 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-cursor {
+  from,
+  to { border-color: transparent; }
+  50% { border-color: black; }
 }
 
 .calculator {
@@ -123,3 +146,4 @@ button {
   -webkit-animation-name: hvr-ripple-out;
   animation-name: hvr-ripple-out;
 }
+

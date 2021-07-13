@@ -1,10 +1,8 @@
 import React from 'react';
-import Navbar from './Navbar';
 
 const Quotes = () => (
   <>
-    <Navbar />
-    <h1>Hello from Quotes</h1>
+    <h2>Everything you can imagine is real. – Pablo Picasso</h2>
   </>
 );
 
