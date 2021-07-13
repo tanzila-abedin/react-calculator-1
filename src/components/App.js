@@ -37,7 +37,7 @@ const App = () => {
   });
 
   return (
-    <div className="App" data-testid="App">
+    <div className="App">
       <header>
         <h2>
           Calculator App built using React

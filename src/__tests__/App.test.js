@@ -1,16 +1,25 @@
-import { render, screen, cleanup } from '@testing-library/react';
-import App from '../components/App';
+import renderer from 'react-test-renderer';
+import Display from '../components/Display';
+import ButtonPanel from '../components/ButtonPanel';
 
-afterEach(() => {
-  cleanup();
-});
-
-test('should render calculator', () => {
-  render(<App />);
-  const appElement = screen.getByTestId('App');
-  expect(appElement).toBeInTheDocument();
-  const displayElement = screen.getByTestId('display');
-  expect(displayElement).toBeInTheDocument();
-  const panelElement = screen.getByTestId('button-panel');
-  expect(panelElement).toBeInTheDocument();
+it('renders correctly', () => {
+  const app = renderer
+    .create(
+      <div className="App">
+        <header>
+          <h2>
+            Calculator App built using React
+          </h2>
+          <p>
+            Built by Ryel Banfield
+          </p>
+        </header>
+        <div className="calculator">
+          <Display />
+          <ButtonPanel />
+        </div>
+      </div>,
+    )
+    .toJSON();
+  expect(app).toMatchSnapshot();
 });

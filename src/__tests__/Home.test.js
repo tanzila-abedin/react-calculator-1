@@ -1,12 +1,8 @@
-import { render, screen, cleanup } from '@testing-library/react';
-import Home from '../components/Home';
+import renderer from 'react-test-renderer';
 
-afterEach(() => {
-  cleanup();
-});
-
-test('should render calculator', () => {
-  render(<Home />);
-  const homeElement = screen.getByTestId('home');
-  expect(homeElement).toBeInTheDocument();
+it('renders correctly', () => {
+  const home = renderer
+    .create(<div><h1>Welcome to Math-Magicians</h1></div>)
+    .toJSON();
+  expect(home).toMatchSnapshot();
 });
