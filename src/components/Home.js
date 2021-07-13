@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Home = () => (
-  <div data-testid="home">
+  <div>
     <h1>Welcome to Math-Magicians</h1>
   </div>
 );
