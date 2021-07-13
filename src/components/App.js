@@ -37,7 +37,7 @@ const App = () => {
   });
 
   return (
-    <>
+    <div className="App" data-testid="App">
       <header>
         <h2>
           Calculator App built using React
@@ -50,7 +50,7 @@ const App = () => {
         <Display result={result} />
         <ButtonPanel handleClick={handleClick} />
       </div>
-    </>
+    </div>
   );
 };
 

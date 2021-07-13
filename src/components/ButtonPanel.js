@@ -10,7 +10,7 @@ const buttonGroups = {
 };
 
 const ButtonPanel = (props) => (
-  <div>
+  <div data-testid="button-panel">
     <div>
       {buttonGroups.group_1.map((button) => (
         <Button
